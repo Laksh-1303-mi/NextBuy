@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toys - NextBuys</title>
+    <link rel="stylesheet" href="toystyle.css">
+</head>
+<body>
+    <h1>Toys are Available For Sale</h1>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="NextBuy.html" class="back-btn">⬅ Back</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="icon-item">
+                <a href="#" title="Notifications">🔔</a>
+                <span>Notification</span>
+            </div>
+            
+            <div class="icon-item">
+                <button class="cart-icon">🛒</button>
+                <span>Cart</span>
+            </div>
+
+            <div id="cartPopup" class="cart-popup">
+                <div class="cart-content">
+                    <h3>🛒 Cart Items</h3>
+                    <div id="cartItems"></div>
+                    <h4 id="totalPrice"></h4>
+                    <button id="buyBtn">Buy Product</button>
+                    <button id="closePopup">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="toys-grid">
+        <div class="toys-card">
+            <img src="toy1.jpg" alt="Toy 1">
+            <h3>Bullet Gun Toy</h3>
+            <h4>₹50</h4>
+            <p>Storio Blaze Storm Hot Fire Soft Bullet Gun Toy With 10 Safe Soft Foam Bullets, Fun Target Shooting Battle Fight Game For Kids Boys (Blaze Storm- Hot Fire),Multicolor</p>
+            <button class="add-to-cart" data-name="Bullet Gun Toy" data-price="50">Add to Cart</button>
+        </div>
+        <div class="toys-card">
+            <img src="toy2.jpg" alt="Toy 2">
+            <h3>Remote Control Car</h3>
+            <h4>₹500</h4>
+            <p>popsugar Off Roader Rechargeable Remote Control Car | RC Car Monster Truck | 4 Headlight Modes | Lithium Battery | C-Type Charging | 2.4GHz Remote Controller </p>
+            <button class="add-to-cart" data-name="Remote Control" data-price="500">Add to Cart</button>
+        </div>
+        <div class="toys-card">
+            <img src="toy3.jpg" alt="Toy 3">
+            <h3>Chess</h3>
+            <h4>₹750</h4>
+            <p>PALM ROYAL HANDICRAFTS 10 Inches Wooden Handmade Foldable Magnetic Chess Board Set with Magnetic Pieces and Extra Queens</p>
+            <button class="add-to-cart" data-name="Chess" data-price="750">Add to Cart</button>
+        </div>
+        <div class="toys-card">
+            <img src="toy4.jpg" alt="Toy 4">
+            <h3>Video Game Console</h3>
+            <h4>₹450</h4>
+            <p>TOYCHANNEL Handheld Gaming Console with 520 Retro Games | Rechargeable Video Game Console with TV Output </p>
+            <button class="add-to-cart" data-name="Video Game Console" data-price="450">Add to Cart</button>
+        </div>
+        <div class="toys-card">
+            <img src="toy5.jpg" alt="Toy 5">
+            <h3>Penguin Soft Toy</h3>
+            <h4>₹350</h4>
+            <p>SCOOBA Adorable Penguin Soft Toy </p>
+            <button class="add-to-cart" data-name="Penguin Soft Toys" data-price="350">Add to Cart</button>
+        </div>
+        <div class="toys-card">
+            <img src="toy6.jpg" alt="Toy 6">
+            <h3>Piano Keyboard</h3>
+            <h4>₹350</h4>
+            <p>Storio Kids Piano Keyboard with Mic | 37 Keys, 8 Rhythms, 8 Tones & 6 Demo Songs</p>
+            <button class="add-to-cart" data-name="Piano Keyboard" data-price="350">Add to Cart</button>
+        </div>
+        <div class="toys-card">
+            <img src="toy7.jpg" alt="Toy 7">
+            <h3>Instant Print Camera</h3>
+            <h4>₹1500</h4>
+            <p>CADDLE & TOES 48 MP 1080p HD Instant Print Camera Toy for Kids with 3 Rolls Print Paper, SD Card, Bluetooth, Fun Filters & Stickers</p>
+            <button class="add-to-cart" data-name="Instant Print Camera" data-price="1500">Add to Cart</button>
+        </div>
+        <div class="toys-card">
+            <img src="toy8.jpg" alt="Toy 8">
+            <h3>Kids Slide</h3>
+            <h4>₹1000</h4>
+            <p>Amazon Brand – Solimo Penguin 2-in-1 Kids Slide with Basketball Hoop & Ball</p>
+            <button class="add-to-cart" data-name="Kids Slide" data-price="1000">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>NextBuy</h3>
+                <p>Making buying and selling pre-owned products simple, affordable, and trustworthy.</p>
+            </div>
+
+            <div class="footer-center">
+                <p><strong>Contact:</strong> 123456789</p>
+                <p>Email: support@nextbuy.com</p>
+                <p>Address: Thanjavur, Tamil Nadu, India</p>
+            </div>
+
+            <div class="footer-right">
+                <p>Follow us:</p>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook.jpg" alt="Facebook"></a>
+                    <a href="#"><img src="instagram.webp" alt="Instagram"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NextBuy. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        let cart = [];
+        let total = 0;
+
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", function() {
+        let name = this.closest(".toys-card").querySelector("h3").textContent;
+        let price = parseFloat(this.closest(".toys-card").querySelector("h4").textContent.replace("₹", ""));
+        let imgSrc = this.closest(".toys-card").querySelector("img").src;
+
+        cart.push({ name, price, imgSrc });
+        total += price;
+        alert(`${name} added to cart!`);
+    });
+});
+
+        document.querySelector(".cart-icon").addEventListener("click", function() {
+            let cartPopup = document.getElementById("cartPopup");
+            let cartItemsDiv = document.getElementById("cartItems");
+            let totalPrice = document.getElementById("totalPrice");
+
+            cartItemsDiv.innerHTML = "";
+            cart.forEach(item => {
+            cartItemsDiv.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.imgSrc}" alt="${item.name}">
+                <div class="cart-details">
+                    <span>${item.name}</span>
+                    <span>₹${item.price}</span>
+                </div>
+            </div>
+            `;
+        });
+
+        totalPrice.textContent = `Total: ₹${total}`;
+        cartPopup.style.display = "flex";
+    });
+
+    document.getElementById("closePopup").addEventListener("click", function() {
+    document.getElementById("cartPopup").style.display = "none";
+    });
+
+    document.getElementById("buyBtn").addEventListener("click", function() {
+        if (cart.length === 0) {
+            alert("Please add items to cart before buying!");
+        } else {
+            alert("✅ Order placed successfully!");
+            cart = [];
+            total = 0;
+            document.getElementById("cartPopup").style.display = "none";
+        }
+    });
+    </script>
+    
+</body>
+</html>

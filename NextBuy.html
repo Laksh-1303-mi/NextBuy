@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextBuy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <header>
+        <h1>NextBuy</h1>
+        <section class="banner">
+            <img src="Logo2.png">
+            
+        </section>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <button onclick="searchProduct()">Search🔍</button>
+        </div>
+
+        <div class="icon-item">
+                <button class="cart-icon">🛒</button>
+                <span>Cart</span>
+            </div>
+
+            <div id="cartPopup" class="cart-popup">
+                <div class="cart-content">
+                    <h3>🛒 Cart Items</h3>
+                    <div id="cartItems"></div>
+                    <h4 id="totalPrice"></h4>
+                    <button id="buyBtn">Buy Product</button>
+                    <button id="closePopup">Close</button>
+                </div>
+            </div>
+
+        <div id="cartPopup" class="cart-popup">
+            <div class="cart-content">
+                <h3>🛒 Cart Items</h3>
+                <div id="cartItems"></div>
+                <h4 id="totalPrice"></h4>
+                <button id="buyBtn">Buy Product</button>
+                <button id="closePopup">Close</button>
+            </div>
+        </div>
+
+            
+         <div class="icons"></div>
+            <div class="icon-item">
+                <a href="login.html" target="_blank" title="Login">
+                    👤
+                    <span>Login</span>
+                </a>
+            </div>
+
+            <div class="icon-item">
+                <a href="#" title="Notifications">🔔</a>
+                    <span>Notification</span>
+            </div>
+                <a href="sell.html" target="_blank">
+                    <button class="sell-btn">SELL</button>
+                </a>
+            </div>
+    </header>
+
+    <section class="about-section">
+        <div class="about-image">
+            <img src="About1.png">
+        </div>
+        <div class="about-text">
+            <h2>ABOUT</h2>
+            <p> NextBuy is a second-hand marketplace designed to make buying and selling pre-owned products simple, affordable, and trustworthy.</p>
+        </div>
+    </section>    
+
+    <section class="categories-section">
+        <a href="books.html" target="_blank">
+            <div class="category">
+                <img src="book.webp" alt="Books">
+                <p>Books</p>
+            </div>
+        </a>
+
+        <a href="electronics.html" target="_blank">
+            <div class="category">
+                <img src="electronics.jpg" alt="Electronics">
+                <p>Electronics</p>
+            </div>
+        </a>
+
+        <a href="toys.html" target="_blank">
+            <div class="category">
+                <img src="toys.avif" alt="Toys">
+                <p>Toys</p>
+            </div>
+        </a>
+
+        <div class="category">
+            <a href="cycle.html" target="_blank">
+                <img src="cycle.webp" alt="Cycle">
+                <p>Cycle</p>
+            </a>
+        </div>
+        <div class="category">
+            <a href="mobile.html" target="_blank">
+                <img src="mobile.png" alt="Mobile">
+                <p>Mobile</p>
+            </a>
+        </div>
+        <div class="category">
+            <a href="furniture.html" target="_blank">
+                <img src="furniture.avif" alt="Furniture">
+                <p>Furniture</p>
+            </a>
+        </div>
+        <div class="category">
+            <a href="dress.html" target="_blank">
+                <img src="dress.avif" alt="Dress">
+                <p>Dress</p>
+        </div>
+        <div class="category">
+            <a href="laptop.html" target="_blank">
+                <img src="laptop.jpg" alt="Laptop">
+                <p>Laptop</p>
+            </a>
+            </a>
+        </div>
+    </section>
+
+    <section class="recommendation-section">
+        <h2>FRESH RECOMMENDATION</h2>
+        <div class="recommendation-grid">
+            <div class="product-card">
+                <img src="slaptop.jpg" alt="Laptop">
+                <h3>Book - The Great Novel</h3>
+                <h4>₹45500</h4>
+                <p>Lenovo V15 G4 AMD Ryzen 5 7520U 15.6 inch FHD Laptop</p>
+                <button class="add-to-cart" data-name="Book - The Great Novel" data-price="45500">Add to Cart</button>
+
+            </div>
+            <div class="product-card">
+                <img src="mobile1.jpg" alt="Mobile">
+                <h3>Mobile</h3>
+                <h4>₹45000</h4>
+                <p>OnePlus 15R | 12GB+256GB | Mint Breeze | World's First Snapdragon® 8 Gen 5 | 7400mAh Battery | Personalised AI | Game-Changing 165Hz Display | IP66 IP68 IP69 & IP69K | 4K 120fps Video</p>
+                <button class="add-to-cart" data-name="Mobile" data-price="45000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="sheadphone.jpg" alt="Head Phone">
+                <h3>Head Phone</h3>
+                <h4>₹450</h4>
+                <p>pTron Studio Pro w/ 65Hrs Playtime, Wireless Over Ear Headphones with HD Mic, Dual Device Pairing, TruTalk AI-ENC Calls, Low-Latency Game & Music, 40mm Drivers, BT5.4, Type-C Fast Charging (Cream)</p>
+                <button class="add-to-cart" data-name="Head Phone" data-price="450">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="stoy.jpg" alt="Toy">
+                <h3>Toys</h3>
+                <h4>₹650</h4>
+                <p>MOSU Giant 6 Feet Panda Teddy Bear Black White Soft Plush Toy</p>
+                <button class="add-to-cart" data-name="Toys" data-price="650">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="sshoe.jpg" alt="Shoe">
+                <h3>Shoe</h3>
+                <h4>₹1500</h4>
+                <p>Puma Unisex-Adult Profoam Galactic Sneaker</p>
+                <button class="add-to-cart" data-name="Shoe" data-price="1500">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="swatch.jpg" alt="Watch">
+                <h3>Watch</h3>
+                <h4>₹3500</h4>
+                <p>Noise Newly Launched Halo 3 Smart Watch with 1.43” AMOLED Display, 1000 NITS Brightness, Premium Metal Design, Powered by AI Pro, AI Transcription, Morning Briefs, 7-Day Battery (Elite Black)</p>
+                <button class="add-to-cart" data-name="Watch" data-price="3500">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="sladder.jpg" alt="Ladder">
+                <h3>Ladder</h3>
+                <h4>₹2500</h4>
+                <p>HOUZA Aluminium Ladder for Home 8 Steps Foldable with Railing & Anti-Skid Wide Steps | 8 Step Ladder for Home Use, Kitchen & Household | 250 Kg Load Capacity Folding Ladder | 5 Year Warranty (Orange)</p>
+                <button class="add-to-cart" data-name="Ladder" data-price="2500">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="SBAG.jpg" alt="Bag">
+                <h3>Bag</h3>
+                <h4>₹500</h4>
+                <p>Safari Omega spacious/large laptop backpack with Raincover, college bag, travel bag for men and women, Black, 30 Litre</p>
+                <button class="add-to-cart" data-name="Bags" data-price="500">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="span.jpg" alt="Pan">
+                <h3> Sause Pan</h3>
+                <h4>₹800</h4>
+                <p>ENSIS triply Induction Sauce pan | Stainless Steel Triply Cookware | 1.5 Liter Tea Saucepan | 16 cm Sauce pan with lid - 5 Year Warranty | Steel Saucepan for Tea</p>
+                <button class="add-to-cart" data-name="Sasuse Pan" data-price="800">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="schair.jpg" alt="Chair">
+                <h3>Chair</h3>
+                <h4>₹4500</h4>
+                <p>ROSE® Iran | 3-Year Brand Warranty | Comfortable High Back Chair | Adjustable Boss Chair for Home Office, Swivel Revolving Professional Executive (Brown, Leatherette HB)</p>
+                <button class="add-to-cart" data-name="Chair" data-price="4500">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>NextBuy</h3>
+                <p>Making buying and selling pre-owned products simple, affordable, and trustworthy.</p>
+            </div>
+
+            <div class="footer-center">
+                <p><strong>Contact:</strong> 123456789</p>
+                <p>Email: support@nextbuy.com</p>
+                <p>Address: Thanjavur, Tamil Nadu, India</p>
+            </div>
+
+            <div class="footer-right">
+                <p>Follow us:</p>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook.jpg" alt="Facebook"></a>
+                    <a href="#"><img src="instagram.webp" alt="Instagram"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NextBuy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    function searchProduct() {
+        let query = document.getElementById("searchInput").value.toLowerCase();
+
+        if (query.includes("book")) {
+            window.location.href = "books.html";
+        } else if (query.includes("electronic")) {
+            window.location.href = "electronics.html";
+        } else if (query.includes("toy")) {
+            window.location.href = "toys.html";
+        } else if (query.includes("cycle")) {
+            window.location.href = "cycle.html";
+        } else if (query.includes("mobile")) {
+            window.location.href = "mobile.html";
+        } else if (query.includes("furniture")) {
+            window.location.href = "furniture.html";
+        } else if (query.includes("dress")) {
+            window.location.href = "dress.html";
+        } else if (query.includes("laptop")) {
+            window.location.href = "laptop.html";
+        } else {
+            alert("No matching category found!");
+        }
+    }
+    </script>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", function() {
+                let name = this.closest(".product-card").querySelector("h3").textContent;
+                let price = parseFloat(this.closest(".product-card").querySelector("h4").textContent.replace("₹", ""));
+                let imgSrc = this.closest(".product-card").querySelector("img").src;
+
+
+                cart.push({ name, price, imgSrc });
+                total += price;
+                alert(`${name} added to cart!`);
+            });
+        });
+
+        document.querySelector(".cart-icon").addEventListener("click", function() {
+            let cartPopup = document.getElementById("cartPopup");
+            let cartItemsDiv = document.getElementById("cartItems");
+            let totalPrice = document.getElementById("totalPrice");
+
+            cartItemsDiv.innerHTML = "";
+            cart.forEach(item => {
+            cartItemsDiv.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.imgSrc}" alt="${item.name}">
+                <div class="cart-details">
+                    <span>${item.name}</span>
+                    <span>₹${item.price}</span>
+                </div>
+            </div>
+            `;
+        });
+
+        totalPrice.textContent = `Total: ₹${total}`;
+        cartPopup.style.display = "flex";
+    });
+
+    document.getElementById("closePopup").addEventListener("click", function() {
+    document.getElementById("cartPopup").style.display = "none";
+    });
+
+    document.getElementById("buyBtn").addEventListener("click", function() {
+        if (cart.length === 0) {
+            alert("Please add items to cart before buying!");
+        } else {
+            alert("✅ Order placed successfully!");
+            cart = [];
+            total = 0;
+            document.getElementById("cartPopup").style.display = "none";
+        }
+    });
+    </script>
+
+</body>
+</html>
