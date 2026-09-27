@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronis - NextBuy</title>
+    <link rel="stylesheet" href="elecstyle.css">
+</head>
+<body>
+    <h1>Electronic Items are Available For Sale</h1>
+
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="NextBuy.html" class="back-btn">⬅ Back</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="icon-item">
+                <a href="#" title="Notifications">🔔</a>
+                <span>Notification</span>
+            </div>
+
+
+            <div class="icon-item">
+                <button class="cart-icon">🛒</button>
+                <span>Cart</span>
+            </div>
+
+            <div id="cartPopup" class="cart-popup">
+                <div class="cart-content">
+                    <h3>🛒 Cart Items</h3>
+                    <div id="cartItems"></div>
+                    <h4 id="totalPrice"></h4>
+                    <button id="buyBtn">Buy Product</button>
+                    <button id="closePopup">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="electronic-grid">
+        <div class="electronic-card">
+            <img src="elec1.jpg" alt="Electronic 1">
+            <h3>Electric Kettle</h3>
+            <h4>₹1000</h4>
+            <p>wipro ABS Elato BK 213 Cool Touch Electric Kettle,1.8 Litre,Anti-Rust Shield,Super Fast Heating,3X Protection,Overheat,Dry Boil & Auto Shut-Off,One Touch Opening,1200 Watts</p>
+            <button class="add-to-cart" data-name="Eelctric Kettle" data-price="1000">Add to Cart</button>
+        </div>
+    
+    
+        <div class="electronic-card">
+            <img src="elec2.jpg" alt="Electronic 1">
+            <h3>Redmi Pad</h3>
+            <h4>₹15000</h4>
+            <p>Redmi Pad 2, 11-inch (27.94 CM), LCD Display - 2.5K Sharp & Clear, 6GB RAM, 128GB ROM, Wi-Fi + Cellular (4G), Quad Speakers, Dolby Atmos, Graphite Grey, AI Enabled</p>
+            <button class="add-to-cart" data-name="Redmi Pad" data-price="15000">Add to Cart</button>
+        </div>
+    
+        <div class="electronic-card">
+            <img src="elec3.jpg" alt="Electronic 1">
+            <h3>Onplus Earbuds</h3>
+            <h4>₹750</h4>
+            <p>OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playback, 2-mic Clear Calls, 3D Spatial Audio, AI Translation, 12.4mm Drivers, Dual-Device Connectivity, 47ms Low Latency - Ash Black</p>
+            <button class="add-to-cart" data-name="OnPlus Earbud" data-price="750">Add to Cart</button>
+        </div>
+    
+        <div class="electronic-card">
+            <img src="elec4.jpg" alt="Electronic 1">
+            <h3>Electric Chopper</h3>
+            <h4>₹250</h4>
+            <p>AGARO Elite Rechargeable Mini Electric Chopper, Food Grade Bowl, Stainless Steel Blades, Rechargeable, One Touch Operation, for Chopping Garlic, Ginger, Onion, Vegetable, Nuts, 250 Ml, Black</p>
+            <button class="add-to-cart" data-name="Electric Chopper" data-price="250">Add to Cart</button>
+        </div>
+    
+        <div class="electronic-card">
+            <img src="elec5.jpg" alt="Electronic 1">
+            <h3>OTG Adaptor</h3>
+            <h4>₹50</h4>
+            <p>Portronics Bridge Y USB 3.0 to Type C OTG Adaptor, 10Gbps High Speed Data Transfer, Thunderbolt to USB Adapter, Compatible for All Type C Devices, Smartphone, Laptops, Tablets, Chargers, MacBook</p>
+            <button class="add-to-cart" data-name="OTG Adaptor" data-price="50">Add to Cart</button>
+        </div>
+    
+        <div class="electronic-card">
+            <img src="elec6.jpg" alt="Electronic 1">
+            <h3>Watch</h3>
+            <h4>₹750</h4>
+            <p>Casio Vintage A-158WA-1Q Digital Grey Dial Unisex Watch Silver Metal Strap (D011)</p>
+            <button class="add-to-cart" data-name="Watch" data-price="750">Add to Cart</button>
+        </div>
+    
+        <div class="electronic-card">
+            <img src="elec7.jpg" alt="Electronic 1">
+            <h3>Camera</h3>
+            <h4>₹150000</h4>
+            <p>Sony Alpha ILCE-7SM3 Full-Frame Mirrorless Camera Body | 4K 120P | 4:2:2 10 bit | ISO 40-409600 | high Dynamic Range | Videographers & Content Creators - Black</p>
+            <button class="add-to-cart" data-name="Camera" data-price="150000">Add to Cart</button>
+        </div>
+   
+        <div class="electronic-card">
+            <img src="elec8.jpg" alt="Electronic 1">
+            <h3>Keyboard</h3>
+            <h4>₹2500</h4>
+            <p>Vantage 75% Wireless Mechanical Keyboard | Gasket Mount | 4-Layer Sound Absorption | 5-Pin Hot-Swap | Pre-Lubed Linear Switches | Doubleshot PBT | Tri-Mode | 4000mAh | RGB Backlit</p>
+            <button class="add-to-cart" data-name="KeyBoard" data-price="2500">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>NextBuy</h3>
+                <p>Making buying and selling pre-owned products simple, affordable, and trustworthy.</p>
+            </div>
+
+            <div class="footer-center">
+                <p><strong>Contact:</strong> 123456789</p>
+                <p>Email: support@nextbuy.com</p>
+                <p>Address: Thanjavur, Tamil Nadu, India</p>
+            </div>
+
+            <div class="footer-right">
+                <p>Follow us:</p>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook.jpg" alt="Facebook"></a>
+                    <a href="#"><img src="instagram.webp" alt="Instagram"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NextBuy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", function() {
+                let name = this.closest(".electronic-card").querySelector("h3").textContent;
+                let price = parseFloat(this.closest(".electronic-card").querySelector("h4").textContent.replace("₹", ""));
+                let imgSrc = this.closest(".electronic-card").querySelector("img").src;
+
+
+                cart.push({ name, price, imgSrc });
+                total += price;
+                alert(`${name} added to cart!`);
+            });
+        });
+
+        document.querySelector(".cart-icon").addEventListener("click", function() {
+            let cartPopup = document.getElementById("cartPopup");
+            let cartItemsDiv = document.getElementById("cartItems");
+            let totalPrice = document.getElementById("totalPrice");
+
+            cartItemsDiv.innerHTML = "";
+            cart.forEach(item => {
+            cartItemsDiv.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.imgSrc}" alt="${item.name}">
+                <div class="cart-details">
+                    <span>${item.name}</span>
+                    <span>₹${item.price}</span>
+                </div>
+            </div>
+            `;
+        });
+
+        totalPrice.textContent = `Total: ₹${total}`;
+        cartPopup.style.display = "flex";
+    });
+
+    document.getElementById("closePopup").addEventListener("click", function() {
+    document.getElementById("cartPopup").style.display = "none";
+    });
+
+    document.getElementById("buyBtn").addEventListener("click", function() {
+        if (cart.length === 0) {
+            alert("Please add items to cart before buying!");
+        } else {
+            alert("✅ Order placed successfully!");
+            cart = [];
+            total = 0;
+            document.getElementById("cartPopup").style.display = "none";
+        }
+    });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress - NextBuy</title>
+    <link rel="stylesheet" href="dressstyle.css">
+</head>
+<body>
+    <h1>Dress are Available For Sale</h1>
+
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="NextBuy.html" class="back-btn">⬅ Back</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="icon-item">
+                <a href="#" title="Notifications">🔔</a>
+                <span>Notification</span>
+            </div>
+            <div class="icon-item">
+                <button class="cart-icon">🛒</button>
+                <span>Cart</span>
+            </div>
+
+            <div id="cartPopup" class="cart-popup">
+                <div class="cart-content">
+                    <h3>🛒 Cart Items</h3>
+                    <div id="cartItems"></div>
+                    <h4 id="totalPrice"></h4>
+                    <button id="buyBtn">Buy Product</button>
+                    <button id="closePopup">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dress-grid">
+        <div class="dress-card">
+            <img src="dress1.jpg" alt="Dress 1">
+            <h3>Kids Dress</h3>
+            <h4>₹100</h4>
+            <p>Kids Boys Top Bottom Set Soft Cotton Comfortable Casual Outfit For Play School And Everyday Activity Set</p>
+            <button class="add-to-cart" data-name="Kids Dress" data-price="100">Add to Cart</button>
+        </div>
+        <div class="dress-card">
+            <img src="dress2.jpg" alt="Dress 2">
+            <h3>Kids Dress</h3>
+            <h4>₹70</h4>
+            <p>BABY GO Unisex Baby Clothing Set</p>
+            <button class="add-to-cart" data-name="Kids Dress" data-price="70">Add to Cart</button>
+        </div>
+        <div class="dress-card">
+            <img src="dress3.jpg" alt="Dress 3">
+            <h3>Kids Dress</h3>
+            <h4>₹350</h4>
+            <p>TAGAS Girls' Dress|Elegant Beige Baby Girl Dress with Lace Ruffles & Floral Embroidery – Long Sleeve Princess Birthday Party Dress | Comfortable & Stylish Kids Wear| PartFrock for Kids</p>
+            <button class="add-to-cart" data-name="Kids Dress" data-price="350">Add to Cart</button>
+        </div>
+        <div class="dress-card">
+            <img src="dress4.jpg" alt="Dress 4">
+            <h3>Kids Dress</h3>
+            <h4>₹250</h4>
+            <p>TAGAS Girls' Dress|Elegant Beige Baby Girl Dress with Lace Ruffles & Floral Embroidery – Long Sleeve Princess Birthday Party Dress | Comfortable & Stylish Kids Wear| PartFrock for Kids</p>
+            <button class="add-to-cart" data-name="Kids Dress" data-price="250">Add to Cart</button>
+        </div>
+        <div class="dress-card">
+            <img src="dress6.jpg" alt="Dress 6">
+            <h3>Kids Dress</h3>
+            <h4>₹550</h4>
+            <p>White Button Girls Jacquard New South Indian Traditional Pattu Pavadai Jecquard Readymade Lehenga Choli</p>
+            <button class="add-to-cart" data-name="Kids Dress" data-price="550">Add to Cart</button>
+        </div>
+        <div class="dress-card">
+            <img src="dress5.jpg" alt="Dress 5">
+            <h3>Kids Dress</h3>
+            <h4>₹550</h4>
+            <p>Summer Dress for Baby Girl/Frocks for Baby Girl/Baby Frocks Girl Poly Rayon/Casual Dress Short Flutter Sleeve</p>
+            <button class="add-to-cart" data-name="Kids Dress" data-price="550">Add to Cart</button>
+        </div>
+        <div class="dress-card">
+            <img src="dress7.jpg" alt="Dress 7">
+            <h3>Kids Dress</h3>
+            <h4>₹250</h4>
+            <p>Ashikta Enterprise Girls Polyester Floral Print Slim Fit Blouse Print Fit & Flared Dress for Crop Top and White Lace Skirt Set</p>
+            <button class="add-to-cart" data-name="Kids Dress" data-price="250">Add to Cart</button>
+        </div>
+         <div class="dress-card">
+            <img src="dress8.jpg" alt="Dress 8">
+            <h3>Kids Dress</h3>
+            <h4>₹350</h4>
+            <p>A.T.U.N. (All Things UBER Nice) Bubble Hem Girls Dress, Standard Length</p>
+            <button class="add-to-cart" data-name="Kids Dress" data-price="350">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>NextBuy</h3>
+                <p>Making buying and selling pre-owned products simple, affordable, and trustworthy.</p>
+            </div>
+
+            <div class="footer-center">
+                <p><strong>Contact:</strong> 123456789</p>
+                <p>Email: support@nextbuy.com</p>
+                <p>Address: Thanjavur, Tamil Nadu, India</p>
+            </div>
+
+            <div class="footer-right">
+                <p>Follow us:</p>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook.jpg" alt="Facebook"></a>
+                    <a href="#"><img src="instagram.webp" alt="Instagram"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NextBuy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", function() {
+                let name = this.closest(".dress-card").querySelector("h3").textContent;
+                let price = parseFloat(this.closest(".dress-card").querySelector("h4").textContent.replace("₹", ""));
+                let imgSrc = this.closest(".dress-card").querySelector("img").src;
+
+
+                cart.push({ name, price, imgSrc });
+                total += price;
+                alert(`${name} added to cart!`);
+            });
+        });
+
+        document.querySelector(".cart-icon").addEventListener("click", function() {
+            let cartPopup = document.getElementById("cartPopup");
+            let cartItemsDiv = document.getElementById("cartItems");
+            let totalPrice = document.getElementById("totalPrice");
+
+            cartItemsDiv.innerHTML = "";
+            cart.forEach(item => {
+            cartItemsDiv.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.imgSrc}" alt="${item.name}">
+                <div class="cart-details">
+                    <span>${item.name}</span>
+                    <span>₹${item.price}</span>
+                </div>
+            </div>
+            `;
+        });
+
+        totalPrice.textContent = `Total: ₹${total}`;
+        cartPopup.style.display = "flex";
+    });
+
+    document.getElementById("closePopup").addEventListener("click", function() {
+    document.getElementById("cartPopup").style.display = "none";
+    });
+
+    document.getElementById("buyBtn").addEventListener("click", function() {
+        if (cart.length === 0) {
+            alert("Please add items to cart before buying!");
+        } else {
+            alert("✅ Order placed successfully!");
+            cart = [];
+            total = 0;
+            document.getElementById("cartPopup").style.display = "none";
+        }
+    });
+    </script>
+</body>
+</html>

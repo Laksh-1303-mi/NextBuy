@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture - NextBuy</title>
+    <link rel="stylesheet" href="furniturestyle.css">
+</head>
+<body>
+    <h1>Furniture are Available For Sale</h1>
+
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="NextBuy.html" class="back-btn">⬅ Back</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="icon-item">
+                <a href="#" title="Notifications">🔔</a>
+                <span>Notification</span>
+            </div>
+            <div class="icon-item">
+                <button class="cart-icon">🛒</button>
+                <span>Cart</span>
+            </div>
+
+            <div id="cartPopup" class="cart-popup">
+                <div class="cart-content">
+                    <h3>🛒 Cart Items</h3>
+                    <div id="cartItems"></div>
+                    <h4 id="totalPrice"></h4>
+                    <button id="buyBtn">Buy Product</button>
+                    <button id="closePopup">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="furniture-grid">
+        <div class="furniture-card">
+            <img src="furniture1.webp" alt="Furniture 1">
+            <h3>Dining Table</h3>
+            <h4>₹8500</h4>
+            <p>VK Furniture Sheesham Solid Wood 4 Seater Dining Table Set of Four with 3 Chairs 1 Bench for Dinner Hall Kitchen Living Room Home Office Restaurant |L45 X W30 X H30|Brown 03</p>
+            <button class="add-to-cart" data-name="Dining Table" data-price="8500">Add to Cart</button>
+        </div>
+        <div class="furniture-card">
+            <img src="furniture2.jpg" alt="Furniture 2">
+            <h3>TV Stand</h3>
+            <h4>₹2500</h4>
+            <p>ABOUT SPACE TV Unit - Engineered Wood DIY TV Stand with Cable Hole Cabinet with Door, Adjustable Shelf, Open Display Shelves for WiFi Router Stand (Oak Red &White-L140 x B40 x H64 cm)</p>
+            <button class="add-to-cart" data-name="TV Stand" data-price="2500">Add to Cart</button>
+        </div>
+        <div class="furniture-card">
+            <img src="furniture3.jpg" alt="Furniture 3">
+            <h3>Coffee Table</h3>
+            <h4>₹1500</h4>
+            <p>Handmade Modern 24"x24" Square Coffee Table/Nesting Table/Sofa Table/Center Table with Marble Finish Top for Living Room/Apartment, Black & Walnut</p>
+            <button class="add-to-cart" data-name="Coffee Table" data-price="1500">Add to Cart</button>
+        </div>
+        <div class="furniture-card">
+            <img src="furniture4.jpg" alt="Furniture 4">
+            <h3>Book Shelf</h3>
+            <h4>₹1250</h4>
+            <p>ABOUT SPACE Book Shelf for Home - 6 Tier Cube Book Shelves, Engineered Wood Book Rack for Study Room, Book Organizer Stand for Library, Bedroom, Living Room, Office (L 33 x B 24 x H 178.5cm -Walnut)</p>
+            <button class="add-to-cart" data-name="Book Shelf" data-price="1250">Add to Cart</button>
+        </div>
+        <div class="furniture-card">
+            <img src="furniture5.jpg" alt="Furniture 5">
+            <h3>Computer Desk</h3>
+            <h4>₹1250</h4>
+            <p>Callas Engineered Wood Computer Desk – Small Modern Writing Desk for Home Office, Bedroom, or Living Room – Sturdy & Simple Laptop Table (CB-ST-03-Brown)</p>
+            <button class="add-to-cart" data-name="Computer Desk" data-price="1250">Add to Cart</button>
+        </div>
+        <div class="furniture-card">
+            <img src="furniture6.jpg" alt="Furniture 6">
+            <h3>Swing Chair</h3>
+            <h4>₹5500</h4>
+            <p>Furniture Single Seater Swing Chair with Stand & Cushion Outdoor Indoor Balcony Garden Patio,Powder Coated Frame,UV Protected Wicker,Premium Cushion NS-17</p>
+            <button class="add-to-cart" data-name="Swing Chair" data-price="5500">Add to Cart</button>
+        </div>
+        <div class="furniture-card">
+            <img src="furniture7.jpg" alt="Furniture 7">
+            <h3>Sofa Set</h3>
+            <h4>₹7500</h4>
+            <p>Home furniture Wooden Sofa Set for Living Room and Office 3 Seater (3 Seater, Teak Finish) Handicraft- Hand Made</p>
+            <button class="add-to-cart" data-name="Sofa Set" data-price="7500">Add to Cart</button>
+        </div>
+        <div class="furniture-card">
+            <img src="furniture8.jpg" alt="Furniture 8">
+            <h3>Chair</h3>
+            <h4>₹75000</h4>
+            <p>Lakdi The Furniture High-Back Luxury Wooden Director Chair with Premium Leather Upholstery, Ergonomic Design, Executive Comfort 150° Reclining Seat 5-Year Warranty & Free Assembly- 111011352_PL</p>
+            <button class="add-to-cart" data-name="Chair" data-price="75000">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>NextBuy</h3>
+                <p>Making buying and selling pre-owned products simple, affordable, and trustworthy.</p>
+            </div>
+
+            <div class="footer-center">
+                <p><strong>Contact:</strong> 123456789</p>
+                <p>Email: support@nextbuy.com</p>
+                <p>Address: Thanjavur, Tamil Nadu, India</p>
+            </div>
+
+            <div class="footer-right">
+                <p>Follow us:</p>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook.jpg" alt="Facebook"></a>
+                    <a href="#"><img src="instagram.webp" alt="Instagram"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NextBuy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", function() {
+                let name = this.closest(".furniture-card").querySelector("h3").textContent;
+                let price = parseFloat(this.closest(".furniture-card").querySelector("h4").textContent.replace("₹", ""));
+                let imgSrc = this.closest(".furniture-card").querySelector("img").src;
+
+
+                cart.push({ name, price, imgSrc });
+                total += price;
+                alert(`${name} added to cart!`);
+            });
+        });
+
+        document.querySelector(".cart-icon").addEventListener("click", function() {
+            let cartPopup = document.getElementById("cartPopup");
+            let cartItemsDiv = document.getElementById("cartItems");
+            let totalPrice = document.getElementById("totalPrice");
+
+            cartItemsDiv.innerHTML = "";
+            cart.forEach(item => {
+            cartItemsDiv.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.imgSrc}" alt="${item.name}">
+                <div class="cart-details">
+                    <span>${item.name}</span>
+                    <span>₹${item.price}</span>
+                </div>
+            </div>
+            `;
+        });
+
+        totalPrice.textContent = `Total: ₹${total}`;
+        cartPopup.style.display = "flex";
+    });
+
+    document.getElementById("closePopup").addEventListener("click", function() {
+    document.getElementById("cartPopup").style.display = "none";
+    });
+
+    document.getElementById("buyBtn").addEventListener("click", function() {
+        if (cart.length === 0) {
+            alert("Please add items to cart before buying!");
+        } else {
+            alert("✅ Order placed successfully!");
+            cart = [];
+            total = 0;
+            document.getElementById("cartPopup").style.display = "none";
+        }
+    });
+    </script>
+</body>
+</html>

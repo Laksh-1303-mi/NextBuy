@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e0f2f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dashboard {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.dashboard h1 {
+  color: #004d40;
+}
+
+.dashboard a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #00796b;
+  font-weight: bold;
+}

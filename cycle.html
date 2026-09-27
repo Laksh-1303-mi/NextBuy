@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle - NextBuy</title>
+    <link rel="stylesheet" href="cyclestyle.css">
+</head>
+<body>
+    <h1>Cycles are Available For Sale</h1>
+
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="NextBuy.html" class="back-btn">⬅ Back</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="icon-item">
+                <a href="#" title="Notifications">🔔</a>
+                <span>Notification</span>
+            </div>
+            
+            <div class="icon-item">
+                <button class="cart-icon">🛒</button>
+                <span>Cart</span>
+            </div>
+
+            <div id="cartPopup" class="cart-popup">
+                <div class="cart-content">
+                    <h3>🛒 Cart Items</h3>
+                    <div id="cartItems"></div>
+                    <h4 id="totalPrice"></h4>
+                    <button id="buyBtn">Buy Product</button>
+                    <button id="closePopup">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cycle-grid">
+        <div class="cycle-card">
+            <img src="cycle1.webp" alt="Cycle 1">
+            <h3>Mountain Cycle</h3>
+            <h4>₹2500</h4>
+            <p>Leader Beast 26T Mountain Cycle for Men with Front Suspension and Dual Disc Brake with Complete Cycle Accessories | Without Gear Cycle </p>
+            <button class="add-to-cart" data-name="Mountain Cycle" data-price="2500">Add to Cart</button>
+        </div>
+        <div class="cycle-card">
+            <img src="cycle2.jpg" alt="Cycle 2">
+            <h3>Kids Cycle</h3>
+            <h4>₹1500</h4>
+            <p>VESCO Kick Pro 14 T Kids Cycle with Balance Wheel & Back Rest Seat/Water Bottle | Rigid Fork, Frame 9 Inch</p>
+            <button class="add-to-cart" data-name="Kids Cycle" data-price="1500">Add to Cart</button>
+        </div>
+        <div class="cycle-card">
+            <img src="cycle3.jpg" alt="Cycle 3">
+            <h3>Baby Cycle</h3>
+            <h4>₹750</h4>
+            <p>Kidsmate Junior Tricycle for Kids with Parental Control | Cycle for Kids 1-4 Years | Baby Cycle | Bicycle with Storage Basket, Cushion Seat and Seat Belt </p>
+            <button class="add-to-cart" data-name="Baby Cycle" data-price="750">Add to Cart</button>
+        </div>
+        <div class="cycle-card">
+            <img src="cycle4.jpg" alt="Cycle 4">
+            <h3>Girls Cycle</h3>
+            <h4>₹5000</h4>
+            <p>BSA cycles Ladybird Hazel Cycle 24T</p>
+            <button class="add-to-cart" data-name="Girls Cycle" data-price="5000">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>NextBuy</h3>
+                <p>Making buying and selling pre-owned products simple, affordable, and trustworthy.</p>
+            </div>
+
+            <div class="footer-center">
+                <p><strong>Contact:</strong> 123456789</p>
+                <p>Email: support@nextbuy.com</p>
+                <p>Address: Thanjavur, Tamil Nadu, India</p>
+            </div>
+
+            <div class="footer-right">
+                <p>Follow us:</p>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook.jpg" alt="Facebook"></a>
+                    <a href="#"><img src="instagram.webp" alt="Instagram"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NextBuy. All rights reserved.</p>
+        </div>
+    </footer>
+<script>
+        let cart = [];
+        let total = 0;
+
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", function() {
+                let name = this.closest(".cycle-card").querySelector("h3").textContent;
+                let price = parseFloat(this.closest(".cycle-card").querySelector("h4").textContent.replace("₹", ""));
+                let imgSrc = this.closest(".cycle-card").querySelector("img").src;
+
+
+                cart.push({ name, price, imgSrc });
+                total += price;
+                alert(`${name} added to cart!`);
+            });
+        });
+
+        document.querySelector(".cart-icon").addEventListener("click", function() {
+            let cartPopup = document.getElementById("cartPopup");
+            let cartItemsDiv = document.getElementById("cartItems");
+            let totalPrice = document.getElementById("totalPrice");
+
+            cartItemsDiv.innerHTML = "";
+            cart.forEach(item => {
+            cartItemsDiv.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.imgSrc}" alt="${item.name}">
+                <div class="cart-details">
+                    <span>${item.name}</span>
+                    <span>₹${item.price}</span>
+                </div>
+            </div>
+            `;
+        });
+
+        totalPrice.textContent = `Total: ₹${total}`;
+        cartPopup.style.display = "flex";
+    });
+
+    document.getElementById("closePopup").addEventListener("click", function() {
+    document.getElementById("cartPopup").style.display = "none";
+    });
+
+    document.getElementById("buyBtn").addEventListener("click", function() {
+        if (cart.length === 0) {
+            alert("Please add items to cart before buying!");
+        } else {
+            alert("✅ Order placed successfully!");
+            cart = [];
+            total = 0;
+            document.getElementById("cartPopup").style.display = "none";
+        }
+    });
+    </script>
+
+</body>
+</html>

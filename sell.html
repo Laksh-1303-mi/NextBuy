@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sell - NextBuy</title>
+  <link rel="stylesheet" href="sellstyle.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="NextBuy.html" class="back-btn">⬅ Back</a>
+        </div>
+    </div>
+
+  <div class="sell-box">
+    <h2>Upload Your Product</h2>
+    <form id="sellForm">
+      <label>Upload Product Photo:</label>
+      <input type="file" id="photo" accept="image/*" required>
+
+      <label>Enter Product Type:</label>
+      <input type="text" id="type" placeholder="e.g., Books, Electronics" required>
+
+      <label>Enter Price:</label>
+      <input type="number" id="price" placeholder="₹" required>
+
+      <label>Enter Description:</label>
+      <textarea id="description" rows="4" placeholder="Describe your product..." required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="message"></p>
+  </div>
+
+  <div id="productDisplay" class="product-display"></div>
+
+  <script>
+    document.getElementById("sellForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      let photo = document.getElementById("photo").files[0];
+      let type = document.getElementById("type").value;
+      let price = document.getElementById("price").value;
+      let description = document.getElementById("description").value;
+
+      if (photo && type && price && description) {
+        document.getElementById("message").textContent = "✅ Product uploaded successfully!";
+        
+        // Create product card
+        let reader = new FileReader();
+        reader.onload = function(e) {
+          let productCard = `
+            <div class="product-card">
+              <img src="${e.target.result}" alt="${type}">
+              <h3>${type}</h3>
+              <h4>₹${price}</h4>
+              <p>${description}</p>
+            </div>
+          `;
+          document.getElementById("productDisplay").innerHTML += productCard;
+        };
+        reader.readAsDataURL(photo);
+
+        // Reset form
+        document.getElementById("sellForm").reset();
+      } else {
+        document.getElementById("message").textContent = "⚠️ Please fill all fields!";
+      }
+    });
+  </script>
+</body>
+</html>
